@@ -1,5 +1,6 @@
 package controller;
 
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +12,7 @@ import service.MainServiceImpl;
 @Controller
 @RequestMapping("/main")
 public class MainController {
-
+	
 	private MainServiceImpl service = new MainServiceImpl();
 	
 	@RequestMapping("/search")

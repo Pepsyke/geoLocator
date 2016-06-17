@@ -2,13 +2,15 @@ package service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import beans.IPRange;
 import beans.IPv4;
 import beans.Location;
 import dao.MainDAOImpl;
 
 public class MainServiceImpl implements MainService {
-
+	
 	private MainDAOImpl dao = new MainDAOImpl();
 
 	public Location getLocationByIPAddress(IPv4 IP) {
