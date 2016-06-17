@@ -1,7 +1,7 @@
-package service;
+package com.service;
 
-import beans.IPv4;
-import beans.Location;
+import com.beans.IPv4;
+import com.beans.Location;
 
 public interface MainService {
 	public long getIPinNumbers(IPv4 IP);

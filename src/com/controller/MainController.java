@@ -1,19 +1,24 @@
-package controller;
+package com.controller;
 
 
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import beans.*;
-import service.MainServiceImpl;
+
+import com.beans.*;
+import com.service.MainServiceImpl;
 
 @Controller
 @RequestMapping("/main")
 public class MainController {
 	
-	private MainServiceImpl service = new MainServiceImpl();
+	@Autowired
+	private MainServiceImpl service;
 	
 	@RequestMapping("/search")
 	protected ModelAndView search() {
@@ -23,7 +28,7 @@ public class MainController {
 	}
 	
 	@RequestMapping(value = "/result", method = RequestMethod.POST)
-	protected ModelAndView result(@ModelAttribute("IP") IPv4 IP) {
+	protected ModelAndView result(@Valid@ModelAttribute("IP") IPv4 IP) {
 		
 		ModelAndView model = new ModelAndView("result");
 		Location location = service.getLocationByIPAddress(IP);

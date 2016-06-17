@@ -1,9 +1,9 @@
-package dao;
+package com.dao;
 
 import java.util.List;
 
-import beans.IPRange;
-import beans.Location;
+import com.beans.IPRange;
+import com.beans.Location;
 
 public interface MainDAO {
 

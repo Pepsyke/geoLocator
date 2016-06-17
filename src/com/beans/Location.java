@@ -1,10 +1,23 @@
-package beans;
+package com.beans;
+
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 public class Location {
-
+	
+	@NotNull
+	@Min(1)
+	@Max(99)
 	private int id;
+	@NotNull
+	@Min(1)
+	@Max(99)
 	private int ipRangeId;
+	@Size(min=1, max=50)
 	private String Country;
+	@Size(min=1, max=50)
 	private String City;
 	
 	public String getCountry() {

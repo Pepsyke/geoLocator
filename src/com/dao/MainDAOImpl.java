@@ -1,4 +1,4 @@
-package dao;
+package com.dao;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -8,12 +8,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import beans.IPRange;
-import beans.IPv4;
-import beans.Location;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
 
+import com.beans.IPRange;
+import com.beans.IPv4;
+import com.beans.Location;
+
+@Component
 public class MainDAOImpl implements MainDAO {
-
+	
+	
 	public MainDAOImpl() {
 		Connection conn = null;
 		try {
@@ -103,6 +108,7 @@ public class MainDAOImpl implements MainDAO {
 	}
 
 	public List<Location> getLocations() {
+		
 		List<Location> locations = new ArrayList<Location>();
 		Location location = null;
 		Connection conn = null;

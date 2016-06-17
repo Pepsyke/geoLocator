@@ -1,4 +1,4 @@
-package beans;
+package com.beans;
 
 public class IPRange {
 	private int id;

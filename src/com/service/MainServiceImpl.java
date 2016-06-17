@@ -1,17 +1,20 @@
-package service;
+package com.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-import beans.IPRange;
-import beans.IPv4;
-import beans.Location;
-import dao.MainDAOImpl;
+import com.beans.IPRange;
+import com.beans.IPv4;
+import com.beans.Location;
+import com.dao.MainDAOImpl;
 
+@Component
 public class MainServiceImpl implements MainService {
 	
-	private MainDAOImpl dao = new MainDAOImpl();
+	@Autowired
+	private MainDAOImpl dao;
 
 	public Location getLocationByIPAddress(IPv4 IP) {
 
